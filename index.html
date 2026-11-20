@@ -20,10 +20,10 @@
      (projects, experience, writing, travels) swap in. Cool slate neutrals, one teal accent;
      Fraunces display, DM Sans body, DM Mono labels. */
   :root{
-    --bg:#F4F3F7;--surface:#FBFBFD;--surface-2:#E8E7EF;--fg:#2B2B33;--fg-soft:#4E4E59;
-    --muted:#84848E;--border:#E0DFE8;--name:#6B5CA0;--accent:#2E8C72;--accent-ink:#1F6E52;
-    --accent-soft:rgba(46,140,114,.12);--ring:rgba(46,140,114,.30);
-    --shadow:0 1px 2px rgba(40,38,55,.03),0 10px 28px -18px rgba(40,38,55,.14);
+    --bg:#FAF9FC;--surface:#FDFCFE;--surface-2:#F0EFF4;--fg:#2C2C33;--fg-soft:#52525C;
+    --muted:#6E6E77;--border:#E4E3EA;--name:#675D91;--accent:#35806B;--accent-ink:#2A6A58;
+    --accent-soft:rgba(53,128,107,.10);--ring:rgba(53,128,107,.26);
+    --shadow:none;
     --font-display:"Fraunces",Georgia,"Times New Roman",serif;
     --font-body:"DM Sans","Segoe UI",system-ui,sans-serif;
     --font-mono:"DM Mono",ui-monospace,Consolas,monospace;
@@ -31,17 +31,17 @@
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#141419;--surface:#1C1C22;--surface-2:#24242B;--fg:#D8D9DF;--fg-soft:#B2B3BD;
-      --muted:#878791;--border:#272730;--name:#BCB1E8;--accent:#77D9BA;--accent-ink:#8FE3C8;
-      --accent-soft:rgba(119,217,186,.13);--ring:rgba(119,217,186,.30);
-      --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 34px -20px rgba(0,0,0,.6);color-scheme:dark;
+      --bg:#16161A;--surface:#1D1D22;--surface-2:#25252B;--fg:#D6D7DC;--fg-soft:#AFB0B8;
+      --muted:#85858E;--border:#2A2A33;--name:#B4AADD;--accent:#6FC9AD;--accent-ink:#84D4BB;
+      --accent-soft:rgba(111,201,173,.11);--ring:rgba(111,201,173,.26);
+      --shadow:none;color-scheme:dark;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#141419;--surface:#1C1C22;--surface-2:#24242B;--fg:#D8D9DF;--fg-soft:#B2B3BD;
-    --muted:#878791;--border:#272730;--name:#BCB1E8;--accent:#77D9BA;--accent-ink:#8FE3C8;
-    --accent-soft:rgba(119,217,186,.13);--ring:rgba(119,217,186,.30);
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 14px 34px -20px rgba(0,0,0,.6);color-scheme:dark;
+    --bg:#16161A;--surface:#1D1D22;--surface-2:#25252B;--fg:#D6D7DC;--fg-soft:#AFB0B8;
+    --muted:#85858E;--border:#2A2A33;--name:#B4AADD;--accent:#6FC9AD;--accent-ink:#84D4BB;
+    --accent-soft:rgba(111,201,173,.11);--ring:rgba(111,201,173,.26);
+    --shadow:none;color-scheme:dark;
   }
 
   *{box-sizing:border-box}
@@ -55,13 +55,11 @@
   nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--border)}
   .nav-in{display:flex;align-items:center;gap:14px;height:58px}
   .brand{font-family:var(--font-mono);font-size:.82rem;display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--fg);flex-shrink:0}
-  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
   .nav-links{display:flex;align-items:center;gap:20px;flex:1;min-width:0;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding-left:6px}
   .nav-links::-webkit-scrollbar{display:none}
   .nav-links a{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);text-decoration:none;transition:color .18s;cursor:pointer}
   .nav-links a:hover{color:var(--fg)}
   .nav-links a.active{color:var(--accent-ink)}
-  .nav-links a.active::after{content:"";display:block;height:2px;background:var(--accent);border-radius:2px;margin-top:3px}
   .nav-links a.cv-link{color:var(--accent-ink)}
   .toggle{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--fg-soft);cursor:pointer;transition:border-color .18s,color .18s;flex-shrink:0}
   .toggle:hover{border-color:var(--ring);color:var(--fg)}
@@ -76,8 +74,7 @@
   .page{padding-block:clamp(40px,7vw,64px) clamp(44px,8vw,72px)}
   .ptitle-lg{font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.04;letter-spacing:-.02em;color:var(--name);margin:0 0 10px;text-wrap:balance}
   .psub{color:var(--muted);font-size:1rem;margin:0 0 30px;max-width:56ch}
-  .eyebrow{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);display:flex;align-items:center;gap:10px;margin:0 0 18px}
-  .eyebrow .rule{flex:1;height:1px;background:var(--border)}
+  .eyebrow{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
   .block{margin-top:clamp(32px,6vw,48px)}
 
   /* home hero — big name, photo floated right */
@@ -85,29 +82,25 @@
   .tagline{font-family:var(--font-body);font-weight:500;font-size:clamp(1.05rem,2.3vw,1.3rem);color:var(--muted);margin:0 0 clamp(26px,5vw,38px)}
   .lede{overflow:hidden}
   .portrait{float:right;width:clamp(188px,32%,288px);margin:4px 0 20px 32px}
-  .portrait img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow)}
+  .portrait img{display:block;width:100%;height:auto;border-radius:4px;border:1px solid var(--border)}
   .portrait figcaption{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);margin-top:12px;line-height:1.55}
-  .eyebrow-hello{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:16px}
   .bio{color:var(--fg-soft);font-size:1.05rem;line-height:1.7}
   .bio p{margin:0 0 1em}.bio p:last-child{margin-bottom:0}
-  .bio a,.inline-link{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid var(--ring);cursor:pointer}
+  .bio a,.inline-link{color:var(--accent-ink);text-decoration:none;cursor:pointer}
   .bio a:hover,.inline-link:hover{color:var(--fg)}
-  .intro-links{display:flex;flex-wrap:wrap;align-items:center;gap:13px;margin-top:28px;clear:both}
-  .cv-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.82rem;padding:10px 17px;border-radius:9px;background:var(--accent);border:1px solid var(--accent);color:#F3FBF8;text-decoration:none;transition:filter .18s,transform .18s}
-  .cv-btn:hover{filter:brightness(1.07);transform:translateY(-1px)}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cv-btn{color:#08302A}}
-  :root[data-theme="dark"] .cv-btn{color:#08302A}
-  :root[data-theme="light"] .cv-btn{color:#F3FBF8}
-  .ghost-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.82rem;padding:10px 16px;border-radius:9px;border:1px solid var(--border);color:var(--fg);text-decoration:none;transition:border-color .18s,transform .18s}
-  .ghost-btn:hover{border-color:var(--ring);transform:translateY(-1px)}
+  .intro-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:26px;clear:both}
+  .cv-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.84rem;padding:10px 18px;border-radius:7px;background:var(--accent-soft);border:1px solid var(--ring);color:var(--accent-ink);text-decoration:none;transition:background .18s,border-color .18s,color .18s}
+  .cv-btn:hover{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--bg)}
+  .ghost-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.84rem;padding:10px 18px;border-radius:7px;background:var(--surface);border:1px solid var(--border);color:var(--fg-soft);text-decoration:none;transition:border-color .18s,color .18s}
+  .ghost-btn:hover{border-color:var(--ring);color:var(--fg)}
   @media (max-width:560px){.portrait{float:none;width:100%;max-width:280px;margin:0 0 20px}}
 
   /* interests — KPI tiles */
   .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px}
-  .kpi{border:1px solid var(--border);border-radius:12px;padding:16px;background:var(--surface);box-shadow:var(--shadow);transition:border-color .2s,transform .2s}
+  .kpi{border:1px solid var(--border);border-radius:10px;padding:16px;background:var(--surface);transition:border-color .2s,transform .2s}
   .kpi:hover{border-color:var(--ring);transform:translateY(-2px)}
-  .kpi .ic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);margin-bottom:11px}
-  .kpi .ic svg{width:17px;height:17px}
+  .kpi .ic{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);margin-bottom:11px}
+  .kpi .ic svg{width:16px;height:16px}
   .kpi .kt{font-weight:600;font-size:.98rem;line-height:1.2}
   .kpi .kd{color:var(--muted);font-size:.82rem;margin-top:4px;line-height:1.4}
 
@@ -119,6 +112,8 @@
   .r .what{color:var(--fg-soft);font-size:.98rem}
   .r .what strong,.r .what .lead{color:var(--fg);font-weight:600}
   .r .what .org{color:var(--accent-ink);font-weight:600}
+  .r .what .org a{color:inherit;text-decoration:none;transition:color .18s}
+  .r .what .org a:hover{color:var(--fg)}
   .r .what .sub{display:block;font-family:var(--font-mono);font-size:.72rem;color:var(--muted);margin-top:2px}
   @media (max-width:540px){.r{grid-template-columns:1fr;gap:3px}.r .when{order:-1;font-size:.72rem}}
 
@@ -129,24 +124,19 @@
   .s-title{font-weight:600;color:var(--fg);font-size:1rem;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
   .s-title .s-when{font-family:var(--font-mono);font-size:.71rem;font-weight:400;color:var(--muted)}
   .s-sub{color:var(--muted);font-size:.86rem;margin-top:2px;line-height:1.45}
+  .s-title a{color:var(--accent-ink);text-decoration:none;transition:color .18s}
+  .s-title a:hover{color:var(--fg)}
 
   /* projects */
-  .pubs{display:flex;flex-direction:column;gap:22px}
-  .pub{display:grid;grid-template-columns:60px 1fr;gap:18px}
-  .thumb{width:60px;height:60px;border-radius:10px;border:1px solid var(--border);background:var(--surface-2);display:grid;place-items:center}
-  .thumb svg{width:30px;height:30px;color:var(--accent);opacity:.9}
+  .pubs{display:flex;flex-direction:column}
+  .pub{padding:22px 0;border-top:1px solid var(--border)}
+  .pub:first-child{border-top:none;padding-top:4px}
   .pub h3{font-family:var(--font-display);font-weight:600;font-size:1.1rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 3px}
   .pub .venue{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);margin:0 0 7px}
   .pub .psum{color:var(--fg-soft);font-size:.95rem;line-height:1.5;margin:0 0 9px}
-  .plinks{display:flex;flex-wrap:wrap;gap:8px}
-  .plink{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:.71rem;padding:4px 10px;border-radius:7px;border:1px solid var(--border);color:var(--fg-soft);text-decoration:none;transition:border-color .18s,color .18s}
-  .plink:hover{border-color:var(--ring);color:var(--fg)}
-  @media (max-width:520px){.pub{grid-template-columns:46px 1fr;gap:13px}.thumb{width:46px;height:46px}.thumb svg{width:24px;height:24px}}
-
-  /* empty-state (travels) */
-  .empty{border:1px dashed var(--border);border-radius:14px;padding:clamp(26px,6vw,40px);background:var(--surface);color:var(--fg-soft);max-width:56ch}
-  .empty .tag{display:inline-block;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);border:1px solid var(--border);border-radius:6px;padding:3px 9px;margin-bottom:14px}
-  .empty p{margin:0 0 .7em}.empty p:last-child{margin-bottom:0}
+  .plinks{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px}
+  .plink{font-family:var(--font-mono);font-size:.73rem;color:var(--accent-ink);text-decoration:none;transition:color .18s}
+  .plink:hover{color:var(--fg)}
 
   /* writing — essay */
   .essay{max-width:66ch}
@@ -154,17 +144,16 @@
   .essay-kicker{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:12px}
   .essay-title{font-family:var(--font-display);font-weight:700;font-size:clamp(1.6rem,4.6vw,2.4rem);line-height:1.08;letter-spacing:-.02em;color:var(--name);margin:0 0 10px;text-wrap:balance}
   .essay-dek{color:var(--fg-soft);font-size:1.08rem;font-style:italic;margin:0 0 16px}
-  .essay-note{display:flex;gap:11px;font-family:var(--font-mono);font-size:.73rem;color:var(--muted);line-height:1.55;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 14px;margin:0}
-  .essay-note svg{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:var(--accent-ink)}
+  .essay-note{font-family:var(--font-mono);font-size:.73rem;color:var(--muted);line-height:1.55;margin:0}
   .prose{color:var(--fg-soft);font-size:1.05rem;line-height:1.78}
   .prose h3{font-family:var(--font-display);font-weight:600;font-size:1.18rem;color:var(--fg);margin:1.9em 0 .5em;letter-spacing:-.01em}
   .prose h3:first-child{margin-top:0}
   .prose p{margin:0 0 1.1em}.prose p:last-child{margin-bottom:0}
   .prose em{color:var(--fg);font-style:italic}
   /* writing — blog index */
-  .posts{display:flex;flex-direction:column;gap:16px;margin-top:4px}
-  .post-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--border);border-radius:14px;padding:clamp(18px,3.5vw,26px);background:var(--surface);box-shadow:var(--shadow);cursor:pointer;transition:border-color .2s,transform .2s}
-  .post-card:hover{border-color:var(--ring);transform:translateY(-2px)}
+  .posts{display:flex;flex-direction:column}
+  .post-card{display:block;text-decoration:none;color:inherit;padding:20px 0;border-top:1px solid var(--border);cursor:pointer}
+  .post-card:first-child{border-top:none;padding-top:4px}
   .post-card:hover .post-more{color:var(--fg)}
   .post-meta{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:var(--accent-ink);margin-bottom:9px}
   .post-title{font-family:var(--font-display);font-weight:700;font-size:clamp(1.3rem,3.2vw,1.72rem);line-height:1.12;letter-spacing:-.01em;color:var(--name);margin:0 0 8px;text-wrap:balance}
@@ -176,18 +165,17 @@
   /* travels gallery */
   .trips{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,208px),1fr));gap:16px}
   .trip{display:flex;flex-direction:column;gap:8px;margin:0}
-  .trip a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--border);aspect-ratio:4/3;background:var(--surface-2)}
-  .trip img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
-  .trip a:hover img{transform:scale(1.045)}
+  .trip a{display:block;border-radius:4px;overflow:hidden;border:1px solid var(--border);aspect-ratio:4/3;background:var(--surface-2)}
+  .trip img{width:100%;height:100%;object-fit:cover;display:block}
   .trip .cap{font-size:.92rem;display:flex;align-items:baseline;gap:7px}
   .trip .cap b{font-weight:600;color:var(--fg)}
   .trip .cap span{font-family:var(--font-mono);font-size:.71rem;color:var(--muted)}
 
   /* footer */
   footer{border-top:1px solid var(--border);padding-block:30px 42px}
-  .social{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
-  .social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid var(--border);border-radius:9px;color:var(--muted);transition:border-color .18s,color .18s,transform .18s;text-decoration:none;cursor:pointer}
-  .social a:hover{border-color:var(--ring);color:var(--fg);transform:translateY(-1px)}
+  .social{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-bottom:16px}
+  .social a{display:inline-flex;align-items:center;color:var(--muted);transition:color .18s;text-decoration:none;cursor:pointer}
+  .social a:hover{color:var(--fg)}
   .social svg{width:17px;height:17px}
   .copyright{font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
 
@@ -199,7 +187,7 @@
 <body>
 <nav>
   <div class="wrap nav-in">
-    <a class="brand" href="#home"><span class="dot"></span>Shreyash Kumar</a>
+    <a class="brand" href="#home">Shreyash Kumar</a>
     <div class="nav-links">
       <a class="tab" data-tab="home" href="#home">Home</a>
       <a class="tab" data-tab="experience" href="#experience">Experience</a>
@@ -224,7 +212,6 @@
       <img src="pics/profile.jpg" alt="Shreyash Kumar" width="560" height="560">
       <figcaption>Hyderabad, India · ✉ <span class="inline-link" id="emailLink">kshreyash23@gmail.com</span></figcaption>
     </figure>
-    <div class="eyebrow-hello">Hello, I'm Shreyash.</div>
     <div class="bio">
       <p>I'm a software engineer at <a href="https://www.goldmansachs.com" target="_blank" rel="noopener">Goldman Sachs</a> in Hyderabad, building backend systems for fund operations and designing AWS workflows.</p>
       <p>Prior to this I spent a summer in the <a href="https://cispa.de/en/research/groups/rossow" target="_blank" rel="noopener">System Security research group</a> at CISPA, under <a href="https://cispa.de/en/people/rossow" target="_blank" rel="noopener">Christian Rossow</a> and working with <a href="https://cispa.de/en/people/c01amch" target="_blank" rel="noopener">Amit Choudhari</a>, exploring kernel-level side channels and targeting Intel's user-space interrupts for potential leakages.</p>
@@ -233,13 +220,13 @@
       <p>Away from the screen I play sport, volleyball above all, read a lot, sing, and I'm hoping to pick up the piano.</p>
     </div>
     <div class="intro-links">
-      <a class="cv-btn" href="https://drive.google.com/file/d/12qvi_sABQPEfEu9bZsVqg2xWqrkEZwvO/view?usp=sharing" target="_blank" rel="noopener">View CV ↗</a>
+      <a class="cv-btn" href="https://drive.google.com/file/d/12qvi_sABQPEfEu9bZsVqg2xWqrkEZwvO/view?usp=sharing" target="_blank" rel="noopener">View CV</a>
       <a class="ghost-btn" href="#projects">See my work →</a>
     </div>
   </div>
 
   <div class="block">
-    <div class="eyebrow">Interests<span class="rule"></span></div>
+    <div class="eyebrow">Interests</div>
     <div class="kpis">
       <div class="kpi">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
@@ -260,7 +247,7 @@
   </div>
 
   <div class="block">
-    <div class="eyebrow">Awards<span class="rule"></span></div>
+    <div class="eyebrow">Awards</div>
     <div class="rows">
       <div class="r"><div class="when">2021</div><div class="what"><strong>AIR 711</strong> in JEE Advanced — top 0.5% of 0.17M+ candidates.</div></div>
       <div class="r"><div class="when">2021</div><div class="what"><strong>AIR 791</strong> in JEE Main — top 0.1% of 1.3M+ candidates.</div></div>
@@ -271,14 +258,14 @@
   </div>
 
   <div class="block">
-    <div class="eyebrow">Beyond work<span class="rule"></span></div>
+    <div class="eyebrow">Beyond work</div>
     <div class="stack">
-      <div class="s-item"><div class="s-title">Institute Secretary, Games &amp; Sports Council <span class="s-when">2024–25</span></div><div class="s-sub">Led 100+ secretaries, founded the E-Sports Club, and drove ~$0.4M of campus sports-facility projects.</div></div>
-      <div class="s-item"><div class="s-title">Men's Volleyball Team <span class="s-when">2022–25</span></div><div class="s-sub">Three Inter-IIT Sports Meets; gold at Udghosh '22.</div></div>
-      <div class="s-item"><div class="s-title">Prayas</div><div class="s-sub">Taught children from underprivileged families near the IIT Kanpur campus.</div></div>
-      <div class="s-item"><div class="s-title">Counselling Service</div><div class="s-sub">Student guide to incoming freshmen; helped run the UG orientation for 1,200.</div></div>
-      <div class="s-item"><div class="s-title">Vox Populi</div><div class="s-sub">Assistant editor in a 50+ member student journalism team.</div></div>
-      <div class="s-item"><div class="s-title">Animal Welfare Cell</div><div class="s-sub">Awareness drives and vaccination of stray dogs on campus.</div></div>
+      <div class="s-item"><div class="s-title">Institute Secretary, <a href="https://www.iitk.ac.in/sports/gnsc.html" target="_blank" rel="noopener">Games &amp; Sports Council</a> <span class="s-when">2024–25</span></div><div class="s-sub">Led 100+ secretaries, founded the E-Sports Club, and drove ~$0.4M of campus sports-facility projects.</div></div>
+      <div class="s-item"><div class="s-title"><a href="https://www.iitk.ac.in/sports/VOLLEYBALL.html" target="_blank" rel="noopener">Men's Volleyball Team</a> <span class="s-when">2022–25</span></div><div class="s-sub">Three Inter-IIT Sports Meets; gold at Udghosh '22.</div></div>
+      <div class="s-item"><div class="s-title"><a href="https://iitk.ac.in/dora/prayas" target="_blank" rel="noopener">Prayas</a></div><div class="s-sub">Taught children from underprivileged families near the IIT Kanpur campus.</div></div>
+      <div class="s-item"><div class="s-title"><a href="https://www.iitk.ac.in/counsel/" target="_blank" rel="noopener">Counselling Service</a></div><div class="s-sub">Student guide to incoming freshmen; helped run the UG orientation for 1,200.</div></div>
+      <div class="s-item"><div class="s-title"><a href="https://voxiitk.com/" target="_blank" rel="noopener">Vox Populi</a></div><div class="s-sub">Assistant editor in a 50+ member student journalism team.</div></div>
+      <div class="s-item"><div class="s-title"><a href="https://www.iitk.ac.in/animalwelfare/" target="_blank" rel="noopener">Animal Welfare Cell</a></div><div class="s-sub">Awareness drives and vaccination of stray dogs on campus.</div></div>
     </div>
   </div>
 </main>
@@ -288,13 +275,13 @@
   <h1 class="ptitle-lg">Experience</h1>
   <p class="psub">Where I've worked and done research.</p>
   <div class="rows">
-    <div class="r"><div class="when">Jul 2025 — now</div><div class="what"><span class="lead">Software Engineer</span> · <span class="org">Goldman Sachs</span><span class="sub">Hyderabad, India</span></div></div>
-    <div class="r"><div class="when">May — Jul 2025</div><div class="what"><span class="lead">Research Intern</span> · <span class="org">CISPA Helmholtz Center for Information Security</span><span class="sub">Dortmund, Germany</span></div></div>
-    <div class="r"><div class="when">Aug 2024 — Apr 2025</div><div class="what"><span class="lead">Undergraduate Researcher</span> · <span class="org">IIT Kanpur</span><span class="sub">Cache-timing attacks on PQC · with Prof. Angshuman Karmakar</span></div></div>
-    <div class="r"><div class="when">Aug — Oct 2024</div><div class="what"><span class="lead">Student Intern</span> · <span class="org">C3iHub, IIT Kanpur</span><span class="sub">Automotive / CAN-bus security</span></div></div>
-    <div class="r"><div class="when">May — Jul 2024</div><div class="what"><span class="lead">Software Engineer Intern</span> · <span class="org">Jaguar Land Rover</span><span class="sub">Bengaluru, India</span></div></div>
-    <div class="r"><div class="when">May — Jul 2023</div><div class="what"><span class="lead">Research Intern</span> · <span class="org">DCode Lab, IIT Kanpur</span><span class="sub">Reinforcement learning for guidance</span></div></div>
-    <div class="r"><div class="when">2021 — 2025</div><div class="what"><span class="lead">B.Tech, Electrical Engineering</span> · <span class="org">IIT Kanpur</span><span class="sub">GPA 8.84/10 · minors in Computer Systems, Machine Learning, Philosophy</span></div></div>
+    <div class="r"><div class="when">Jul 2025 — now</div><div class="what"><span class="lead">Software Engineer</span> · <span class="org"><a href="https://www.goldmansachs.com" target="_blank" rel="noopener">Goldman Sachs</a></span><span class="sub">Hyderabad, India</span></div></div>
+    <div class="r"><div class="when">May — Jul 2025</div><div class="what"><span class="lead">Research Intern</span> · <span class="org"><a href="https://cispa.de/en" target="_blank" rel="noopener">CISPA Helmholtz Center for Information Security</a></span><span class="sub">Dortmund, Germany</span></div></div>
+    <div class="r"><div class="when">Aug 2024 — Apr 2025</div><div class="what"><span class="lead">Undergraduate Researcher</span> · <span class="org"><a href="https://www.iitk.ac.in/" target="_blank" rel="noopener">IIT Kanpur</a></span><span class="sub">Cache-timing attacks on PQC · with Prof. Angshuman Karmakar</span></div></div>
+    <div class="r"><div class="when">Aug — Oct 2024</div><div class="what"><span class="lead">Student Intern</span> · <span class="org"><a href="https://c3ihub.org/" target="_blank" rel="noopener">C3iHub, IIT Kanpur</a></span><span class="sub">Automotive / CAN-bus security</span></div></div>
+    <div class="r"><div class="when">May — Jul 2024</div><div class="what"><span class="lead">Software Engineer Intern</span> · <span class="org"><a href="https://www.jaguarlandrover.com/" target="_blank" rel="noopener">Jaguar Land Rover</a></span><span class="sub">Bengaluru, India</span></div></div>
+    <div class="r"><div class="when">May — Jul 2023</div><div class="what"><span class="lead">Research Intern</span> · <span class="org"><a href="https://sites.google.com/view/twinkletripathy/dcode-lab" target="_blank" rel="noopener">DCode Lab, IIT Kanpur</a></span><span class="sub">Reinforcement learning for guidance</span></div></div>
+    <div class="r"><div class="when">2021 — 2025</div><div class="what"><span class="lead">B.Tech, Electrical Engineering</span> · <span class="org"><a href="https://www.iitk.ac.in/ee/" target="_blank" rel="noopener">IIT Kanpur</a></span><span class="sub">GPA 8.84/10 · minors in Computer Systems, Machine Learning, Philosophy</span></div></div>
   </div>
 </main>
 
@@ -305,51 +292,39 @@
   <div class="pubs">
 
     <article class="pub">
-      <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><circle cx="12" cy="11" r="3"/><path d="M8 20h8"/></svg></div>
-      <div>
-        <h3>Haar-Accelerated Deepfake Detection</h3>
-        <p class="venue">Deep Learning for Computer Vision · IIT Kanpur · 2025</p>
-        <p class="psum">A ResNeXt + LSTM detector with attention, fronted by a Haar-cascade face detector for ~5× faster preprocessing; 76.5% accuracy on a 2,000-video FaceForensics++ split.</p>
-        <div class="plinks">
-          <a class="plink" href="https://github.com/Seladorr/Haar-Accelerated-Deepfake-Detection-System" target="_blank" rel="noopener">Code ↗</a>
-          <a class="plink" href="https://github.com/Seladorr/Haar-Accelerated-Deepfake-Detection-System/blob/main/dlcv_final.pdf" target="_blank" rel="noopener">Report ↗</a>
-        </div>
+      <h3>Haar-Accelerated Deepfake Detection</h3>
+      <p class="venue">Deep Learning for Computer Vision · IIT Kanpur · 2025</p>
+      <p class="psum">A ResNeXt + LSTM detector with attention, fronted by a Haar-cascade face detector for ~5× faster preprocessing; 76.5% accuracy on a 2,000-video FaceForensics++ split.</p>
+      <div class="plinks">
+        <a class="plink" href="https://github.com/Seladorr/Haar-Accelerated-Deepfake-Detection-System" target="_blank" rel="noopener">Code ↗</a>
+        <a class="plink" href="https://github.com/Seladorr/Haar-Accelerated-Deepfake-Detection-System/blob/main/dlcv_final.pdf" target="_blank" rel="noopener">Report ↗</a>
       </div>
     </article>
 
     <article class="pub">
-      <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
-      <div>
-        <h3>Side-Channel Analysis of LESS</h3>
-        <p class="venue">Cache-timing attacks on PQC · IIT Kanpur · 2025</p>
-        <p class="psum">Flush+Reload and Prime+Probe analyses of the LESS post-quantum signature scheme, with a Mastik-based proof of concept that reconstructs the secret permutation.</p>
-        <div class="plinks">
-          <a class="plink" href="https://github.com/Seladorr/LESS-Side-Channel-Reports" target="_blank" rel="noopener">Report ↗</a>
-        </div>
+      <h3>Side-Channel Analysis of LESS</h3>
+      <p class="venue">Cache-timing attacks on PQC · IIT Kanpur · 2025</p>
+      <p class="psum">Flush+Reload and Prime+Probe analyses of the LESS post-quantum signature scheme, with a Mastik-based proof of concept that reconstructs the secret permutation.</p>
+      <div class="plinks">
+        <a class="plink" href="https://github.com/Seladorr/LESS-Side-Channel-Reports" target="_blank" rel="noopener">Report ↗</a>
       </div>
     </article>
 
     <article class="pub">
-      <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8 16.5 16 7.5M6 15.5V9a3 3 0 0 1 3-3h4"/></svg></div>
-      <div>
-        <h3>Online Dynamic Vehicle Routing</h3>
-        <p class="venue">Cyber-Physical Systems · IIT Kanpur · 2024</p>
-        <p class="psum">Reinforcement learning for real-time paratransit routing — an MCTS policy tuned to a 30s decision deadline, reaching 100% request fulfilment with five vehicles.</p>
-        <div class="plinks">
-          <a class="plink" href="https://github.com/Seladorr/An-Online-Approach-to-Solve-the-Dynamic-Vehicle-Routing-Problem" target="_blank" rel="noopener">Code ↗</a>
-        </div>
+      <h3>Online Dynamic Vehicle Routing</h3>
+      <p class="venue">Cyber-Physical Systems · IIT Kanpur · 2024</p>
+      <p class="psum">Reinforcement learning for real-time paratransit routing — an MCTS policy tuned to a 30s decision deadline, reaching 100% request fulfilment with five vehicles.</p>
+      <div class="plinks">
+        <a class="plink" href="https://github.com/Seladorr/An-Online-Approach-to-Solve-the-Dynamic-Vehicle-Routing-Problem" target="_blank" rel="noopener">Code ↗</a>
       </div>
     </article>
 
     <article class="pub">
-      <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
-      <div>
-        <h3>Parallelizing Stencil Computation</h3>
-        <p class="venue">Parallel Computing · IIT Kanpur · 2024</p>
-        <p class="psum">Optimised MPI halo exchange for 5- and 9-point stencils (+30%), with topology-aware hierarchical communication adding a further 25% on the HPC cluster.</p>
-        <div class="plinks">
-          <a class="plink" href="https://github.com/Seladorr/Parallelizing-Stencil-Computation" target="_blank" rel="noopener">Code ↗</a>
-        </div>
+      <h3>Parallelizing Stencil Computation</h3>
+      <p class="venue">Parallel Computing · IIT Kanpur · 2024</p>
+      <p class="psum">Optimised MPI halo exchange for 5- and 9-point stencils (+30%), with topology-aware hierarchical communication adding a further 25% on the HPC cluster.</p>
+      <div class="plinks">
+        <a class="plink" href="https://github.com/Seladorr/Parallelizing-Stencil-Computation" target="_blank" rel="noopener">Code ↗</a>
       </div>
     </article>
 
@@ -381,7 +356,6 @@
       <h2 class="essay-title">The Divine in Indian Philosophy</h2>
       <p class="essay-dek">Immanence, experience, and the search for meaning in a silent world.</p>
       <p class="essay-note">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
         <span>Written and submitted as part of my Philosophy of Religion course at IIT Kanpur.</span>
       </p>
     </header>
