@@ -1,4 +1,4 @@
-# seladorr.github.io
+# kr-shreyash.github.io
 
 My personal site — live at [kr-shreyash.github.io](https://kr-shreyash.github.io).
 
